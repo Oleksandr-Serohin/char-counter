@@ -1,5 +1,7 @@
 package ua.com.foxminded.counter.uniquechars;
 
+import org.cache2k.Cache;
+import org.cache2k.Cache2kBuilder;
 import ua.com.foxminded.counter.exception.Validator;
 
 import java.util.LinkedHashMap;
@@ -15,10 +17,10 @@ import java.util.stream.Collectors;
  */
 
 public class Counter {
-
-    private static String cash;
-    private static String formatString;
-
+    static Cache<String, String> cache = new Cache2kBuilder<String, String> () {}
+            .name("cacheString")
+            .eternal(true)
+            .build();
     /**
      * @param sentences string
      * @return format string with unique character calculated their number
@@ -26,14 +28,15 @@ public class Counter {
     public static String calculatedUniqueCharacterTheirNumber(String sentences) {
         Validator validator = new Validator ();
         validator.validateArguments (sentences);
-        if (sentences.equals (cash)) {
-            return formatString;
+        String savedString = cache.peek (sentences);
+        if (savedString != null) {
+            return savedString;
         }
         List<Character> chars = convertStringToCharList (sentences);
         LinkedHashMap<String, Integer> uniqueCharacter = calculatedUniqueCharacters (chars);
         String result = format (uniqueCharacter);
-        cash = sentences;
-        formatString = result;
+
+        cache.put(sentences, result);
         return result;
     }
 

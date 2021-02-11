@@ -8,6 +8,7 @@
     <artifactId>char-counter</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
+        <cache2k-version>2.0.0.Final</cache2k-version>
         <junit-jupiter.version>5.7.1</junit-jupiter.version>
         <maven.compiler.target>15</maven.compiler.target>
         <maven.compiler.source>15</maven.compiler.source>
@@ -15,6 +16,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.cache2k</groupId>
+            <artifactId>cache2k-api</artifactId>
+            <version>${cache2k-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cache2k</groupId>
+            <artifactId>cache2k-core</artifactId>
+            <version>${cache2k-version}</version>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

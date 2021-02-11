@@ -1,8 +1,8 @@
-package ua.com.foxminded.charcounter.uniquechars;
+package ua.com.foxminded.counter.uniquechars;
 
 
 import org.junit.jupiter.api.Test;
-import ua.com.foxminded.charcounter.Main;
+import ua.com.foxminded.counter.Main;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -25,7 +25,7 @@ class MainTest {
                 "w" - 1
                 "r" - 1
                 "d" - 1
-                "!" - 1                       
+                "!" - 1
                 """;
         PrintStream out = System.out;
         InputStream in = System.in;
@@ -48,7 +48,7 @@ class MainTest {
                 "w" - 1
                 "r" - 1
                 "d" - 1
-                "!" - 1                       
+                "!" - 1
                 """;
         PrintStream out = System.out;
         InputStream in = System.in;

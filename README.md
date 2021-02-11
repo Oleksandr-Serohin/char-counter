@@ -59,7 +59,7 @@ Main.java, Exception.java among the files.
 >java ua.com.foxminded.counter.Main 
 Hello World!
 
-![alt text](docs/Work_charcounter "As application works")
+![alt text](docs/Work_charcounter.png "As application works")
 ```
 If the system cannot find javac, check the set path command. If javac runs but you get errors, cell developers.
 ```

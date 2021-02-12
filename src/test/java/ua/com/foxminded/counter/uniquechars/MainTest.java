@@ -25,8 +25,7 @@ class MainTest {
                 "w" - 1
                 "r" - 1
                 "d" - 1
-                "!" - 1
-                """;
+                "!" - 1""";
         PrintStream out = System.out;
         InputStream in = System.in;
         ByteArrayOutputStream outContent = new ByteArrayOutputStream ();
@@ -48,8 +47,7 @@ class MainTest {
                 "w" - 1
                 "r" - 1
                 "d" - 1
-                "!" - 1
-                """;
+                "!" - 1""";
         PrintStream out = System.out;
         InputStream in = System.in;
         ByteArrayOutputStream outContentString1 = new ByteArrayOutputStream ();

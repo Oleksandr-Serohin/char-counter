@@ -27,8 +27,7 @@ class CounterTest {
                 "w" - 1
                 "r" - 1
                 "d" - 1
-                "!" - 1
-                """;
+                "!" - 1""";
         assertEquals (expected, actual);
     }
 
@@ -59,8 +58,7 @@ class CounterTest {
                 "*" - 1
                 "(" - 1
                 ")" - 2
-                "_" - 1
-                """;
+                "_" - 1""";
         String actual = counter.calculatedUniqueCharacterTheirNumber ("!@#$%^&*())_");
         assertEquals (expected, actual);
     }

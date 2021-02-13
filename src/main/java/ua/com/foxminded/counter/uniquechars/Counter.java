@@ -2,6 +2,7 @@ package ua.com.foxminded.counter.uniquechars;
 
 import ua.com.foxminded.counter.exception.Validator;
 
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,7 +27,6 @@ public class Counter {
     public String calculatedUniqueCharacterTheirNumber(String sentences) {
         Validator validator = new Validator ();
         validator.validateArguments (sentences);
-
         cache.computeIfAbsent (sentences, this::calculatedUniqueCharacters);
         return cache.get (sentences);
     }
@@ -49,9 +49,7 @@ public class Counter {
      * @return format string
      */
     private static String format(Map<String, Integer> uniqueCharacter) {
-        String result = uniqueCharacter.keySet ().stream ()
-                .map (ch -> new StringBuilder ().append ("\"").append (ch).append ("\" - ")
-                        .append (uniqueCharacter.get (ch)).append ("\n").toString ())
+        String result = uniqueCharacter.keySet ().stream ().map (ch -> String.format ("%s", "\"" + ch + "\" - " + uniqueCharacter.get(ch) + "\n"))
                 .collect (Collectors.joining ());
         return result.trim ();
     }

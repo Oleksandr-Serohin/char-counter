@@ -6,6 +6,7 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.WeakHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class Counter {
 
-    static Map<String, String> cache = new HashMap<> ();
+    static Map<String, String> cache = new HashMap<>(1,1);
 
     /**
      * @param sentences string

@@ -1,4 +1,4 @@
-package ua.com.foxminded.counter.sizehashmap;
+package ua.com.foxminded.counter.sizelinkedhashmap;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,13 +11,13 @@ import java.util.Map;
  * @version 1.0001
  */
 
-public class MaxSizeHashMap<K, V> extends LinkedHashMap<K, V> {
+public class MaxSizeLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
     private final int maxSize;
 
     /**
      * @param maxSize number size LinkedHashMap
      */
-    public MaxSizeHashMap(int maxSize) {
+    public MaxSizeLinkedHashMap(int maxSize) {
         this.maxSize = maxSize;
     }
 

@@ -1,7 +1,7 @@
 package ua.com.foxminded.counter.uniquechars;
 
 import ua.com.foxminded.counter.exception.Validator;
-import ua.com.foxminded.counter.sizehashmap.MaxSizeHashMap;
+import ua.com.foxminded.counter.sizelinkedhashmap.MaxSizeLinkedHashMap;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class Counter {
 
-    static MaxSizeHashMap<String, String> cache = new MaxSizeHashMap<String, String> (1);//set size LinkedHashMap
+    static MaxSizeLinkedHashMap<String, String> cache = new MaxSizeLinkedHashMap<String, String> (1);//set size LinkedHashMap
 
     /**
      * @param sentences string

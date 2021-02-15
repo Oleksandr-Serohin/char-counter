@@ -2,8 +2,6 @@ package ua.com.foxminded.counter;
 
 import ua.com.foxminded.counter.uniquechars.Counter;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryMXBean;
 import java.util.Scanner;
 
 /**
@@ -15,18 +13,14 @@ import java.util.Scanner;
  */
 
 public class Main {
-    private static final int MEGABYTE = (1024 * 1024);
 
-    /**
+     /**
      * The main method off this application.
-     *
      * @param args array of string arguments.
-     * @return print format string
      */
     public static void main(String[] args) {
-        MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean ();
-        Scanner in = new Scanner (System.in);
 
+        Scanner in = new Scanner (System.in);
         while (in.hasNextLine ()) {
             Counter counter = new Counter ();
             System.out.print (counter.calculatedUniqueCharacterTheirNumber (in.nextLine ()));

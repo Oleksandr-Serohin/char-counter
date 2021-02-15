@@ -1,12 +1,10 @@
 package ua.com.foxminded.counter.uniquechars;
 
 import ua.com.foxminded.counter.exception.Validator;
+import ua.com.foxminded.counter.sizehashmap.MaxSizeHashMap;
 
-import java.text.MessageFormat;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.WeakHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -19,15 +17,15 @@ import java.util.stream.Collectors;
 
 public class Counter {
 
-    static Map<String, String> cache = new HashMap<>(1,1);
+    static MaxSizeHashMap<String, String> cache = new MaxSizeHashMap<String, String> (1);//set size LinkedHashMap
 
     /**
      * @param sentences string
      * @return format string with unique character calculated their number
      */
+
     public String calculatedUniqueCharacterTheirNumber(String sentences) {
-        Validator validator = new Validator ();
-        validator.validateArguments (sentences);
+        Validator.validateArguments (sentences);
         cache.computeIfAbsent (sentences, this::calculatedUniqueCharacters);
         return cache.get (sentences);
     }
@@ -39,9 +37,7 @@ public class Counter {
     private String calculatedUniqueCharacters(String sentences) {
         Map<String, Integer> unique = sentences.chars ().mapToObj (e -> (char) e).
                 collect (LinkedHashMap::new, (map, value) ->
-                {
-                    map.merge (String.valueOf (value), 1, Integer::sum);
-                }, LinkedHashMap::putAll);
+                        map.merge (String.valueOf (value), 1, Integer::sum), LinkedHashMap::putAll);
         return format (unique);
     }
 
@@ -50,7 +46,8 @@ public class Counter {
      * @return format string
      */
     private static String format(Map<String, Integer> uniqueCharacter) {
-        String result = uniqueCharacter.keySet ().stream ().map (ch -> String.format ("%s", "\"" + ch + "\" - " + uniqueCharacter.get(ch) + "\n"))
+        String result = uniqueCharacter.keySet ().stream ().map (ch -> String.format ("%s",
+                "\"" + ch + "\" - " + uniqueCharacter.get (ch) + "\n"))
                 .collect (Collectors.joining ());
         return result.trim ();
     }

@@ -1,4 +1,4 @@
-package ua.com.foxminded.counter.uniquechars;
+package ua.com.foxminded.counter.sizelinkedhashmap;
 
 import org.junit.jupiter.api.Test;
 import ua.com.foxminded.counter.sizelinkedhashmap.MaxSizeLinkedHashMap;

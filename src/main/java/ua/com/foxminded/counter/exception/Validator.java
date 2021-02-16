@@ -7,7 +7,7 @@ import java.util.Optional;
  * Date: Feb 11-2021 Checks input string
  * if validation fails prints a message
  *
- * @author Aleksandr Serogin
+ * @author Aleksandr Serohin
  * @version 1.0001
  */
 

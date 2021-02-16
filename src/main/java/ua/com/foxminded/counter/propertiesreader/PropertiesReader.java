@@ -2,34 +2,51 @@ package ua.com.foxminded.counter.propertiesreader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
+
 /**
- * Date: Feb 15-2021 Class read file
+ * Date: Feb 16-2021 Class read file
  * with setting size LinkedHashSet
  *
- * @author Aleksandr Serogin
+ * @author Aleksandr Serohin
  * @version 1.0001
  */
 
 public class PropertiesReader {
+    int result;
 
-    public static int PropertiesReader() {
-        Path path = Paths.get ("src/main/resources/SetSizeCache.txt");
-        File file = new File (path.toUri ());
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner (file);
-        } catch (FileNotFoundException e) {
-            System.out.format ("File " + "SetSizeCache.txt" + " not found in " + "src/main/resources/");
-        }
+    /**
+     * @param file input file with setting
+     */
+    public void ScanFile(File file) {
         String sizeCache = "";
-        while (scanner.hasNextLine ()) {
-            sizeCache = sizeCache.concat (String.valueOf (scanner.nextLine ()));
+        try {
+            FileReader reader = new FileReader ( file );
+            Scanner scanner = new Scanner ( reader );
+            while (scanner.hasNextLine ()) {
+                sizeCache = sizeCache.concat ( String.valueOf ( scanner.nextLine () ) );
+            }
+            reader.close ();
+        } catch (IOException e) {
+            System.out.println("Something wrong with file setting");
         }
-        int result = Integer.valueOf (sizeCache.replaceAll ("\\D+", ""));
+        try {
+            this.result = Integer.valueOf ( sizeCache.replaceAll ( "\\D+", "" ) );
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException ( "File setting is empty" );
+        }
+    }
+
+    /**
+     * @return int size cache
+     */
+    public int SetSizeCache() {
+        ConnectFile connectFile = new ConnectFile ();
+        File file = connectFile.getFile ( "SetSizeCache.txt" );
+        ScanFile ( file );
         return result;
     }
 }

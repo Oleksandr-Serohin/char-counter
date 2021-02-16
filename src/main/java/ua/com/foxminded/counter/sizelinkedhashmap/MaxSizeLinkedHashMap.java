@@ -7,7 +7,7 @@ import java.util.Map;
  * Date: Feb 15-2021 Class for set size
  * LinkedHashMap
  *
- * @author Aleksandr Serogin
+ * @author Aleksandr Serohin
  * @version 1.0001
  */
 

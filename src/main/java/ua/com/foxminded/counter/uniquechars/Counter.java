@@ -1,25 +1,25 @@
 package ua.com.foxminded.counter.uniquechars;
 
 import ua.com.foxminded.counter.exception.Validator;
+import ua.com.foxminded.counter.propertiesreader.PropertiesReader;
 import ua.com.foxminded.counter.sizelinkedhashmap.MaxSizeLinkedHashMap;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ua.com.foxminded.counter.propertiesreader.PropertiesReader.PropertiesReader;
-
 /**
  * Date: Feb 11-2021 Class select unique chars,
  * calculated their number, format to string
  *
- * @author Aleksandr Serogin
+ * @author Aleksandr Serohin
  * @version 1.0001
  */
 
 public class Counter {
 
-    static MaxSizeLinkedHashMap<String, String> cache = new MaxSizeLinkedHashMap<> (PropertiesReader());//set size LinkedHashMap
+    PropertiesReader propertiesReader = new PropertiesReader();
+    MaxSizeLinkedHashMap<String, String> cache = new MaxSizeLinkedHashMap<> (propertiesReader.SetSizeCache());//set size LinkedHashMap
 
     /**
      * @param sentences string

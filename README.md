@@ -1,4 +1,5 @@
 `Task 5 - Collection Framework`
+
 Write an application char-counter that takes a string and returns the number of unique characters in the string.
 
 It is expected that a string with the same character sequence may be passed several times to the method.

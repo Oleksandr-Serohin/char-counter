@@ -1,7 +1,7 @@
 package ua.com.foxminded.counter;
 
 import ua.com.foxminded.counter.uniquechars.Counter;
-
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -18,7 +18,7 @@ public class Main {
      * The main method off this application.
      * @param args array of string arguments.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner in = new Scanner (System.in);
         while (in.hasNextLine ()) {

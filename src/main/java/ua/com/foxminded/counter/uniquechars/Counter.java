@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static ua.com.foxminded.counter.propertiesreader.PropertiesReader.PropertiesReader;
+
 /**
  * Date: Feb 11-2021 Class select unique chars,
  * calculated their number, format to string
@@ -17,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class Counter {
 
-    static MaxSizeLinkedHashMap<String, String> cache = new MaxSizeLinkedHashMap<String, String> (1);//set size LinkedHashMap
+    static MaxSizeLinkedHashMap<String, String> cache = new MaxSizeLinkedHashMap<> (PropertiesReader());//set size LinkedHashMap
 
     /**
      * @param sentences string

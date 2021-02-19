@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-
 /**
  * Date: Feb 16-2021 Class read file
  * with setting size LinkedHashSet
@@ -15,7 +14,6 @@ import java.util.Scanner;
  * @author Aleksandr Serohin
  * @version 1.0001
  */
-
 public class PropertiesReader {
 
     int sizeCache; //size cache

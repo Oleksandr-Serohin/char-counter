@@ -11,7 +11,6 @@ import java.util.Scanner;
  * @author Aleksandr Serohin
  * @version 1.0001
  */
-
 public class Main {
 
     /**

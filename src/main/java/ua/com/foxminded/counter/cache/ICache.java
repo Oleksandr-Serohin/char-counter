@@ -1,6 +1,6 @@
 package ua.com.foxminded.counter.cache;
 
-public interface ICache{
+public interface ICache {
 
     boolean containsKey(String value);
 

@@ -13,8 +13,7 @@ import java.util.Map;
  * @author Aleksandr Serohin
  * @version 1.0001
  */
-
-public class Cache implements ICache{
+public class Cache implements ICache {
 
     private PropertiesReader propertiesReader = new PropertiesReader ();
     private final int sizeCache = propertiesReader.GetSizeCache (); // get size cache
@@ -35,7 +34,7 @@ public class Cache implements ICache{
 
     /**
      * @param value key for search in cache
-     * @return  returns value if hase
+     * @return returns value if hase
      */
     @Override
     public String get(String value) {
@@ -43,12 +42,11 @@ public class Cache implements ICache{
     }
 
     /**
-     * @param key put as key in cache
+     * @param key   put as key in cache
      * @param value put as value in cache
      */
     @Override
     public void put(String key, String value) {
         cache.put ( key, value );
     }
-
 }

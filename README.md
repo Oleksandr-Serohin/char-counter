@@ -27,10 +27,16 @@ Your mast put file Exception.java
 Your mast put file Counter.java
 >*ua\com\foxminded\counter\uniquechars
 
+Your mast put file SetSizeCache.txt
+>Source_folder\
 
 For exampl 
 
+File *.java
 >C:\ua\com\foxminded\counter\
+
+File SetSizeCache.txt
+>C:\
 
 * Run Command Prompt
 
@@ -61,6 +67,19 @@ Main.java, Exception.java among the files.
 Hello World!
 
 ![alt text](docs/Work_charcounter.png "As application works")
+
+>You can setting size of cache in file SetSizeCache.txt
+
+Now:
+```
+sizeCache = 10;
+```
+
+Change:
+```
+sizeCache = 20;
+```
+
 ```
 If the system cannot find javac, check the set path command. If javac runs but you get errors, cell developers.
 ```

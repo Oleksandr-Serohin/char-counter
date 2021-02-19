@@ -19,7 +19,6 @@ public class Main {
      * @param args array of string arguments.
      */
     public static void main(String[] args) {
-
         Scanner in = new Scanner ( System.in );
         Counter counter = new Counter ();
         while (in.hasNextLine ()) {

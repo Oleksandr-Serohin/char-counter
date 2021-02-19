@@ -6,10 +6,10 @@ import java.nio.file.Paths;
 
 /**
  * Date: Feb 16-2021 Class connect with file
- *  * and return file
- *  *
- *  * @author Aleksandr Serohin
- *  * @version 1.0001
+ * and return file
+ *
+ * @author Aleksandr Serohin
+ * @version 1.0001
  */
 public class ConnectFile {
 

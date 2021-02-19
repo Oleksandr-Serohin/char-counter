@@ -14,16 +14,17 @@ import java.util.Scanner;
 
 public class Main {
 
-     /**
+    /**
      * The main method off this application.
+     *
      * @param args array of string arguments.
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        Scanner in = new Scanner (System.in);
+        Scanner in = new Scanner ( System.in );
+        Counter counter = new Counter ();
         while (in.hasNextLine ()) {
-            Counter counter = new Counter ();
-            System.out.print (counter.calculatedUniqueCharacterTheirNumber (in.nextLine ()));
+            System.out.print ( counter.calculatedUniqueCharacterTheirNumber ( in.nextLine () ) );
         }
     }
 }

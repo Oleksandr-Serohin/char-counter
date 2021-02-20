@@ -62,4 +62,21 @@ class CounterTest {
         String actual = counter.calculatedUniqueCharacterTheirNumber ("!@#$%^&*())_");
         assertEquals (expected, actual);
     }
+
+    @Test
+    void whenTwoString_getFromCacheFormatString() {
+        String actual = counter.calculatedUniqueCharacterTheirNumber ("Hello world!");
+        String actual1 = counter.calculatedUniqueCharacterTheirNumber ("Hello world!");
+        String expected = """
+                "H" - 1
+                "e" - 1
+                "l" - 3
+                "o" - 2
+                " " - 1
+                "w" - 1
+                "r" - 1
+                "d" - 1
+                "!" - 1""";
+        assertEquals (expected, actual1);
+    }
 }

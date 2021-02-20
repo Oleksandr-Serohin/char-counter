@@ -11,19 +11,18 @@ import java.util.Scanner;
  * @author Aleksandr Serohin
  * @version 1.0001
  */
-
 public class Main {
 
-     /**
+    /**
      * The main method off this application.
+     *
      * @param args array of string arguments.
      */
-    public static void main(String[] args){
-
-        Scanner in = new Scanner (System.in);
+    public static void main(String[] args) {
+        Scanner in = new Scanner ( System.in );
+        Counter counter = new Counter ();
         while (in.hasNextLine ()) {
-            Counter counter = new Counter ();
-            System.out.print (counter.calculatedUniqueCharacterTheirNumber (in.nextLine ()));
+            System.out.print ( counter.calculatedUniqueCharacterTheirNumber ( in.nextLine () ) );
         }
     }
 }

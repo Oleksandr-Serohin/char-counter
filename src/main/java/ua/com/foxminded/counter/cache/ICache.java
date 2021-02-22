@@ -2,7 +2,7 @@ package ua.com.foxminded.counter.cache;
 
 public interface ICache {
 
-    boolean containsKey(String value);
+    boolean containsKey(String key);
 
     String get(String key);
 

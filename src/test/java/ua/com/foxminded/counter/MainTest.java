@@ -1,6 +1,7 @@
 package ua.com.foxminded.counter;
 
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -9,6 +10,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Main")
 class MainTest {
 
     @Test

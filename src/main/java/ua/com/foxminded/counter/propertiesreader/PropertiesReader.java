@@ -46,7 +46,7 @@ public class PropertiesReader {
      */
     public int GetSizeCache() {
         ConnectFile connectFile = new ConnectFile ();
-        File file = connectFile.getFile ( "SetSizeCache.txt" ); //set name file
+        File file = connectFile.getFile ( "src/main/resources/SetSizeCache.txt" ); //set URI to file
         ScanFile ( file ); //send file to scan
         return sizeCache;
     }

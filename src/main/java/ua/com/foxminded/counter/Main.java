@@ -1,6 +1,6 @@
 package ua.com.foxminded.counter;
 
-import ua.com.foxminded.counter.uniquechars.Counter;
+import ua.com.foxminded.counter.coordinator.Coordinator;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner ( System.in );
-        Counter counter = new Counter ();
+        Coordinator counter = new Coordinator ();
         while (in.hasNextLine ()) {
             System.out.print ( counter.calculatedUniqueCharacterTheirNumber ( in.nextLine () ) );
         }

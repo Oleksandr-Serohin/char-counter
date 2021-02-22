@@ -16,8 +16,8 @@ public class ConnectFile {
     /**
      * @return file
      */
-    public File getFile(String fileName) {
-        Path path = Paths.get ( "src/main/resources/" + fileName );
+    public File getFile(String setURI) {
+        Path path = Paths.get ( setURI );
         File file = new File ( path.toUri () );
         return file;
     }

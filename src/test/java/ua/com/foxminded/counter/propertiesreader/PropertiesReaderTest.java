@@ -1,13 +1,16 @@
 package ua.com.foxminded.counter.propertiesreader;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.io.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
+@DisplayName("PropertiesReader")
 class PropertiesReaderTest {
 
     private PropertiesReader propertiesReader;
+
     @BeforeEach
     public void preTestSetup()
     {
@@ -52,8 +55,7 @@ class PropertiesReaderTest {
     @Test
     public void When_NonFile_Expect_NullPointerException()  {
         File file = mock ( File.class );
-        String isNull= null;
         NullPointerException thrown = assertThrows ( NullPointerException.class, () -> new PropertiesReader ().ScanFile ( file ) );
-        assertEquals ( isNull, thrown.getMessage () );
+        assertEquals ( null, thrown.getMessage () );
     }
 }
